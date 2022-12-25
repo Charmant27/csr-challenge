@@ -29,7 +29,7 @@ const Sidebar = () => {
     <div
       className={`${
         isSidebarOpen
-          ? "fixed top-0 left-0 bg-white shadow-lg w-72 h-screen overflow-y-scroll scroll-m-2 transition-all duration-700 ease-linear"
+          ? "sidebar fixed top-0 left-0 bg-white shadow-lg w-72 h-screen overflow-y-scroll transition-all duration-700 ease-linear"
           : "side"
       }`}
     >

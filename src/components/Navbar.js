@@ -10,8 +10,8 @@ const Navbar = () => {
     <nav
       className={`${
         isSidebarOpen
-          ? "nav fixed w-full pl-80 bg-white flex items-center justify-between px-10 py-4 transition-all duration-75 ease-linear"
-          : "nav fixed w-full bg-white flex items-center justify-between px-10 py-4 transition-all duration-300 ease-linear"
+          ? "nav w-full pl-80 bg-white flex items-center justify-between px-10 py-4 transition-all duration-75 ease-linear"
+          : "nav w-full bg-white flex items-center justify-between px-10 py-4 transition-all duration-300 ease-linear"
       }`}
     >
       <div className="flex items-center">
