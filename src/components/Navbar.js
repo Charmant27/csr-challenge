@@ -2,14 +2,25 @@ import React from "react";
 import { FaBars, FaBell } from "react-icons/fa";
 import { BiMessageAltDetail } from "react-icons/bi";
 import { FiGift } from "react-icons/fi";
+import { useGlobalContext } from "../context/Context";
 
 const Navbar = () => {
+  const { openSidebar, isSidebarOpen } = useGlobalContext();
   return (
-    <nav className="nav fixed w-full pl-80 bg-white flex items-center justify-between px-10 py-4">
+    <nav
+      className={`${
+        isSidebarOpen
+          ? "nav fixed w-full pl-80 bg-white flex items-center justify-between px-10 py-4 transition-all duration-75 ease-linear"
+          : "nav fixed w-full bg-white flex items-center justify-between px-10 py-4 transition-all duration-300 ease-linear"
+      }`}
+    >
       <div className="flex items-center">
-        <div className="text-green-600 mr-4 w-2 cursor-pointer">
+        <button
+          className="text-green-600 mr-4 w-2 cursor-pointer"
+          onClick={openSidebar}
+        >
           <FaBars />
-        </div>
+        </button>
         <h1 className="capitalize font-bold">dashboard</h1>
       </div>
       {/* profile section */}

@@ -4,6 +4,7 @@ import {
   FaDesktop,
   FaChartArea,
   FaArrowRight,
+  FaTimes,
 } from "react-icons/fa";
 import { FiHeart } from "react-icons/fi";
 import { BsShieldPlus, BsServer } from "react-icons/bs";
@@ -12,8 +13,11 @@ import { TbNotebook, TbWorld } from "react-icons/tb";
 import { CgNotes } from "react-icons/cg";
 import { GrSettingsOption } from "react-icons/gr";
 import { IoNewspaperOutline } from "react-icons/io5";
+import { useGlobalContext } from "../context/Context";
 
 const Sidebar = () => {
+  const { isSidebarOpen, closeSidebar } = useGlobalContext();
+
   const [date, setDate] = useState();
 
   useEffect(() => {
@@ -22,7 +26,21 @@ const Sidebar = () => {
   }, [date]);
 
   return (
-    <div className={`fixed top-0 left-0 bg-white shadow-lg w-72 h-screen overflow-y-scroll scroll-m-2`}>
+    <div
+      className={`${
+        isSidebarOpen
+          ? "fixed top-0 left-0 bg-white shadow-lg w-72 h-screen overflow-y-scroll scroll-m-2 transition-all duration-700 ease-linear"
+          : "side"
+      }`}
+    >
+      <div className="close-toggle absolute right-4 top-4">
+        <button
+          className="text-green-600 mr-4 w-2 cursor-pointer"
+          onClick={closeSidebar}
+        >
+          <FaTimes />
+        </button>
+      </div>
       <div className="flex items-center pl-5 py-4 font-extrabold text-2xl text-green-600">
         <div className="mr-3">
           <BsShieldPlus />
@@ -140,7 +158,9 @@ const Sidebar = () => {
       </div>
 
       <div className="mb-6 px-4">
-        <h2 className="text-slate-500 capitalize font-semibold">eres hospital admin dashboard &copy; {date} all rights reserved</h2>
+        <h2 className="text-slate-500 capitalize font-semibold">
+          eres hospital admin dashboard &copy; {date} all rights reserved
+        </h2>
       </div>
     </div>
   );
