@@ -5,7 +5,7 @@
 
 @layer base {
     body {
-        @apply bg-slate-50
+        @apply bg-slate-100
     }
 }
 
@@ -28,6 +28,10 @@
 
 
 .side {
+    display: none;
+}
+
+.nav-toggle {
     display: none;
 }
 
