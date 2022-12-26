@@ -4,6 +4,8 @@ import { GrSettingsOption } from "react-icons/gr";
 import Menu from "./Menu";
 import BarChart from "./BarChart";
 import { Data } from "../data/Data";
+import Doctors from "./Doctors";
+import { useGlobalContext } from "../context/Context";
 
 const Dashboard = () => {
   const [data, setData] = useState({
@@ -23,8 +25,10 @@ const Dashboard = () => {
     ],
   });
 
+  const { isSidebarOpen } = useGlobalContext();
+
   return (
-    <div className="px-16">
+    <div className={`${isSidebarOpen ? "pl-80" : "px-16"}`}>
       {/* first part */}
 
       <div className="flex items-center justify-between pt-6">
@@ -37,7 +41,13 @@ const Dashboard = () => {
           </h2>
         </div>
 
-        <div className="flex items-center gap-x-8">
+        <div
+          className={`${
+            isSidebarOpen
+              ? "flex items-center gap-x-8 px-6"
+              : "flex items-center gap-x-8"
+          }`}
+        >
           {/* input form */}
           <div>
             <label className="flex items-center bg-white px-5 py-2 rounded-[2rem]">
@@ -66,6 +76,9 @@ const Dashboard = () => {
       <div>
         <BarChart chart={data} />
       </div>
+
+      {/* third section */}
+      <Doctors />
     </div>
   );
 };
