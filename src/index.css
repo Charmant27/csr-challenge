@@ -13,17 +13,31 @@
     background-color: orangered;
 }
 
+::-webkit-scrollbar {
+    width: 0.4rem;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+
+
 .side {
     display: none;
 }
 
-
-
-/* .sidebar {
-    box-shadow: rgb(113 122 131 / 11%) 0px 7px 30px 0px;
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
 }
 
-.navbar {
-    z-index: 10000;
-} */
-
+.settings-icon {
+    background-color: orangered;
+    color: white;
+}
