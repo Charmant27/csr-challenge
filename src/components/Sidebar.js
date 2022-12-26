@@ -5,6 +5,7 @@ import {
   FaChartArea,
   FaArrowRight,
   FaTimes,
+  FaHeart,
 } from "react-icons/fa";
 import { FiHeart } from "react-icons/fi";
 import { BsShieldPlus, BsServer } from "react-icons/bs";
@@ -161,6 +162,21 @@ const Sidebar = () => {
         <h2 className="text-slate-500 capitalize font-semibold">
           eres hospital admin dashboard &copy; {date} all rights reserved
         </h2>
+        <div className="flex items-center gap-x-2">
+          <div>
+            <h2 className="text-slate-500 pt-2 capitalize font-semibold">
+              made with
+            </h2>
+          </div>
+          <div className="text-slate-500">
+            <FaHeart />
+          </div>
+          <div>
+            <h2 className="text-slate-500 pt-2 capitalize font-semibold">
+              by charmant
+            </h2>
+          </div>
+        </div>
       </div>
     </div>
   );
