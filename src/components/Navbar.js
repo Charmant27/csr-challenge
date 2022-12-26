@@ -16,7 +16,9 @@ const Navbar = () => {
     >
       <div className="flex items-center">
         <button
-          className="text-green-600 mr-4 w-2 cursor-pointer"
+          className={`${
+            isSidebarOpen ? "nav-toggle" : "text-green-600 mr-4 w-2 cursor-pointer"
+          }`}
           onClick={openSidebar}
         >
           <FaBars />
